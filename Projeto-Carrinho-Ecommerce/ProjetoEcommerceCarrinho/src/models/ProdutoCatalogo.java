@@ -4,6 +4,10 @@ public class ProdutoCatalogo extends Produto {
 	
 	private int estoque;
 
+	public ProdutoCatalogo() {
+		super();
+	}
+
 	public int getEstoque() {
 		return estoque;
 	}
@@ -17,8 +21,7 @@ public class ProdutoCatalogo extends Produto {
 		return String.format("Id: %d\nNome: %s\nDescrição: %s\nPreço: %.2f\nQuantidade Disponível: %d\n",
 				this.getId(), this.getName(), this.getDescricao(), this.getPrice(), this.getEstoque());
 	}
-	
-	
-	
+
+
 }
 

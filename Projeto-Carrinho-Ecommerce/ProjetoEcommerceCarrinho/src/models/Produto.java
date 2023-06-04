@@ -1,12 +1,11 @@
 package models;
 
 public abstract class Produto {
-	
+
 	private int id;
 	private double price;
 	private String name;
 	private String descricao;
-	
 	
 	public int getId() {
 		return id;

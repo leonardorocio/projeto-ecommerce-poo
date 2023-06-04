@@ -20,6 +20,9 @@ public abstract class ListaDeProdutos {
 	}
 	
 	 int buscaProduto(int id) {
+		/*return (int) this.listaDeProdutos.stream()
+				.takeWhile(produto -> produto.getId() != id)
+				.count();*/
 		int counter = 0;
 		for (Produto produto: this.listaDeProdutos) {
 			if (produto.getId() == id) {

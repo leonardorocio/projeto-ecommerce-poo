@@ -4,6 +4,10 @@ public class ProdutoCarrinho extends Produto {
 	
 	private int quantidade;
 
+	public ProdutoCarrinho() {
+		super();
+	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
@@ -17,4 +21,5 @@ public class ProdutoCarrinho extends Produto {
 		return String.format("Id: %d\nNome: %s\nDescrição: %s\nPreço: %.2f\nQuantidade Selecionada: %d\n",
 				this.getId(), this.getName(), this.getDescricao(), this.getPrice(), this.getQuantidade());
 	}
+
 }
