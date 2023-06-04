@@ -1,14 +1,27 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface ListaDeProdutos {
+public abstract class ListaDeProdutos {
+
+	private List<Produto> listaDeProdutos = new ArrayList<>();
+
+	public List<Produto> getListaDeProdutos() {
+		return listaDeProdutos;
+	}
+
+	public void setListaDeProdutos(List<Produto> listaDeProdutos) {
+		this.listaDeProdutos = listaDeProdutos;
+	}
+
+	public void adicionarProduto(Produto produto) {
+		this.listaDeProdutos.add(produto);
+	}
 	
-	void adicionarProduto(Produto produto);
-	
-	default int buscaProduto(List<Produto> listaProdutos, int id) {
+	 int buscaProduto(int id) {
 		int counter = 0;
-		for (Produto produto: listaProdutos) {
+		for (Produto produto: this.listaDeProdutos) {
 			if (produto.getId() == id) {
 				break;
 			}
@@ -16,11 +29,22 @@ public interface ListaDeProdutos {
 		}
 		return counter;
 	}
-	
-	void removerProduto(int id);
-	
-	void alterarProduto(Produto produto);
-	
-	List<String> mostrarProdutos();
-	// mostrar
+
+	public void removerProduto(int id) {
+		int posicaoId = this.buscaProduto(id);
+		this.listaDeProdutos.remove(posicaoId);
+	}
+
+	public void alterarProduto(Produto produto) {
+		int posicaoId = this.buscaProduto(produto.getId());
+		this.listaDeProdutos.set(posicaoId, produto);
+	}
+
+	public List<String> mostrarProdutos() {
+		List<String> mostraProdutos = new ArrayList<>();
+		for (Produto produto: this.listaDeProdutos) {
+			mostraProdutos.add(produto.mostrarProduto());
+		}
+		return mostraProdutos;
+	}
 }
