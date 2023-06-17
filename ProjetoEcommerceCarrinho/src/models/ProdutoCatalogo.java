@@ -26,8 +26,13 @@ public class ProdutoCatalogo extends Produto {
 
 	@Override
 	public String mostrarProduto() {
-		return String.format("Id: %d\nNome: %s\nDescrição: %s\nPreço: %.2f\nQuantidade Disponível: %d\n",
-				this.getId(), this.getName(), this.getDescricao(), this.getPrice(), this.getEstoque());
+		return String.format("Id: %d\nNome: %s\nDescrição: %s\nPreço: R$ %.2f\nQuantidade Disponível: %d\n",
+				this.getId(), this.getName(), this.getDescricao(), this.getPreco(), this.getEstoque());
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s (%d disponíveis)", super.toString(), this.getEstoque());
 	}
 
 

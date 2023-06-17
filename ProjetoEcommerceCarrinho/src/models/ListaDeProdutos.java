@@ -19,10 +19,7 @@ public abstract class ListaDeProdutos {
 		this.listaDeProdutos.add(produto);
 	}
 	
-	 int buscaProduto(int id) {
-		/*return (int) this.listaDeProdutos.stream()
-				.takeWhile(produto -> produto.getId() != id)
-				.count();*/
+	public int buscaProdutoIndex(int id) {
 		int counter = 0;
 		for (Produto produto: this.listaDeProdutos) {
 			if (produto.getId() == id) {
@@ -33,13 +30,16 @@ public abstract class ListaDeProdutos {
 		return counter;
 	}
 
-	public void removerProduto(int index) {
-		// int posicaoId = this.buscaProduto(id);
-		this.listaDeProdutos.remove(index);
+	public Produto buscaProduto(int id) {
+		return this.getListaDeProdutos().stream().filter(e -> e.getId() == id).findFirst().get();
+	}
+
+	public void removerProduto(Produto produto) {
+		this.listaDeProdutos.remove(produto);
 	}
 
 	public void alterarProduto(Produto produto) {
-		int posicaoId = this.buscaProduto(produto.getId());
+		int posicaoId = this.buscaProdutoIndex(produto.getId());
 		this.listaDeProdutos.set(posicaoId, produto);
 	}
 

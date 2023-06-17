@@ -3,7 +3,7 @@ package models;
 public abstract class Produto {
 
 	private int id;
-	private double price;
+	private double preco;
 	private String name;
 	private String descricao;
 	
@@ -13,11 +13,11 @@ public abstract class Produto {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public double getPrice() {
-		return price;
+	public double getPreco() {
+		return preco;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPreco(double preco) {
+		this.preco = preco;
 	}
 	public String getName() {
 		return name;
@@ -39,7 +39,12 @@ public abstract class Produto {
 	public Produto(String nome, String descricao, double preco) {
 		this.name = nome;
 		this.descricao = descricao;
-		this.price = preco;
+		this.preco = preco;
+	}
+
+	@Override
+	public String toString() {
+		return this.name;
 	}
 	
 	public abstract String mostrarProduto();

@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Carrinho extends ListaDeProdutos {
 
@@ -12,8 +11,15 @@ public class Carrinho extends ListaDeProdutos {
 		return total;
 	}
 
+	public void alterarTotal(double valor) {
+		this.total += valor;
+	}
+
 	public void setTotal(double total) {
 		this.total = total;
 	}
 	
+	public void limpaCarrinho() {
+		this.setListaDeProdutos(new ArrayList<>());
+	}
 }
