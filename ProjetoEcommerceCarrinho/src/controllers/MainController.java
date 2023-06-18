@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import main.Main;
 import models.Carrinho;
 import models.CatalogoProdutos;
 import models.Permissao;
@@ -14,7 +15,7 @@ import views.View;
 public class MainController {
 
 	protected static CatalogoProdutos catalogoProdutos = new CatalogoProdutos();
-	protected static Carrinho carrinho = new Carrinho();
+	protected static Carrinho carrinho = Main.usuarioComum.getCarrinho();
 	
 	protected static Usuario usuarioLogado;
 
@@ -27,8 +28,6 @@ public class MainController {
 	public static String buscaNomeNaStringDoProduto(String produto) {
 		String propriedadeNome = produto.split("\n")[1];
 		String nomeProduto = propriedadeNome.split(":")[1];
-		System.out.println(propriedadeNome.split(":"));
-		System.out.println(nomeProduto);
 		return nomeProduto;
 	}
 

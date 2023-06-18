@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Carrinho extends ListaDeProdutos {
 
 	// Aqui teriam todas as outras funções do carrinho
-	double total;
+	private double total;
 	
 	public double getTotal() {
 		return total;

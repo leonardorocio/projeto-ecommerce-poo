@@ -1,7 +1,6 @@
 package controllers;
 
 import views.*;
-import main.Main;
 import models.*;
 
 public class ComumController extends MainController {

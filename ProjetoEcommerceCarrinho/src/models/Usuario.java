@@ -7,7 +7,6 @@ public class Usuario {
 	private int id;
 	private String nome;
 	private Permissao permissao;
-	private Endereco endereco;
 	private Carrinho carrinho;
 	private String senha;
 	
@@ -29,12 +28,7 @@ public class Usuario {
 	public void setPermissao(Permissao permissao) {
 		this.permissao = permissao;
 	}
-	public Endereco getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+
 	public Carrinho getCarrinho() {
 		return carrinho;
 	}
@@ -58,5 +52,10 @@ public class Usuario {
 		this.nome = nome;
 		this.senha = senha;
 		this.permissao = permissao;
+	}
+
+	public Usuario(String nome, String senha, Permissao permissao, Carrinho carrinho) {
+		this(nome, senha, permissao);
+		this.carrinho = carrinho;
 	}
 }
